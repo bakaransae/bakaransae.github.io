@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Perangkat dan Redirect</title>
+    <script>
+        // Deteksi perangkat dan arahkan ke file yang sesuai
+        window.onload = function() {
+            if (navigator.userAgent.match(/Mobi/)) {
+                // Redirect ke indeks2.html jika menggunakan ponsel
+                window.location.href = "indeks2.html";
+            } else {
+                // Redirect ke index2.html jika menggunakan PC
+                window.location.href = "OnProcess2.html";
+            }
+        };
+    </script>
+</head>
+<body>
+    <!--<h1>Redirecting...</h1>-->
+    <!--<p>Anda akan diarahkan ke halaman yang sesuai berdasarkan perangkat Anda.</p>-->
+</body>
+</html>

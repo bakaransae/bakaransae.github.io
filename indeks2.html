@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Linktree</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling untuk Slider */
+    .testimonial-slider {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    .testimonial-container {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .testimonial-card {
+      flex: 0 0 100%;
+      padding: 20px;
+      text-align: center;
+      background-color: yellow;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #333;
+    }
+
+    .testimonial-card h3 {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Styling untuk Profile Image */
+    .profile-img {
+      width: 200px;  /* Ukuran lebih besar */
+      height: 200px; /* Ukuran lebih besar */
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Profile Section -->
+    <div class="profile">
+      <img src="bakaran.png" alt="Profile Picture" class="profile-img">
+      <h1 class="name">Bakaran Sae</h1>
+      <p class="bio">PESAN -> TERIMA -> BAYAR</p>
+    </div>
+
+    <!-- Testimonial Slider Section -->
+    <div class="testimonial-slider">
+      <div class="testimonial-container">
+        <div class="testimonial-card">
+          <p>"Makanan yang luar biasa, pelayanan sangat cepat!"</p>
+          <h3>- Firman</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"Pengalaman yang sangat memuaskan, pasti akan kembali lagi."</p>
+          <h3>- Dian</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"Layanan pelanggan sangat ramah dan profesional."</p>
+          <h3>- Fitri</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links Section -->
+    <div class="links">
+      <!--<a href="menu.html" class="link" target="_blank">Menu</a>-->
+      <a href="menu.html" class="link" target="_blank">Menu</a>
+      <a href="testimoni.html" class="link" target="_blank">Testimoni</a>
+      <a href="layananKonsumen.html" class="link" target="_blank">Kritik Dan Saran</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 Bakaran Sae</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript untuk mengatur pergeseran otomatis slider
+    const testimonialContainer = document.querySelector('.testimonial-container');
+    let index = 0;
+
+    function moveSlider() {
+      const totalSlides = document.querySelectorAll('.testimonial-card').length;
+      index = (index + 1) % totalSlides;
+      testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Set interval untuk pergeseran otomatis setiap 5 detik
+    setInterval(moveSlider, 5000);
+  </script>
+</body>
+</html>

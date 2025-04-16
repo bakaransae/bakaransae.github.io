@@ -1,0 +1,205 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Profile Section */
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .bio {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+/* Slide Show Section */
+.slider-container {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden; /* Menyembunyikan slide yang berada di luar container */
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Menambahkan efek transisi */
+  }
+  
+  .slide {
+    min-width: 100%; /* Setiap slide memiliki lebar 100% dari container */
+    box-sizing: border-box;
+  }
+  
+  .slide img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Navigation Buttons */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2em;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  /* Links Section */
+  .links {
+    margin-bottom: 20px;
+  }
+  
+  .link {
+    display: block;
+    background-color: #1da1f2;
+    color: white;
+    padding: 12px;
+    margin: 8px 0;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .link:hover {
+    background-color: #0d8ad8;
+  }
+  
+  /* Footer */
+  .footer {
+    font-size: 0.9em;
+    color: #999;
+  }
+  /* Slide Show Section */
+.slider-container {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden; /* Menyembunyikan slide yang berada di luar container */
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Menambahkan efek transisi */
+}
+
+.slide {
+  min-width: 100%; /* Setiap slide memiliki lebar 100% dari container */
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Container */
+.menu-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.menu-title {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Section Titles */
+.menu-section h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ff9800;
+  display: inline-block;
+  color: #ff9800;
+}
+
+/* Menu Items */
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Item Image */
+.menu-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+/* Menu Item Info */
+.menu-info h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.menu-info p {
+  margin: 5px 0 0;
+  color: #666;
+}

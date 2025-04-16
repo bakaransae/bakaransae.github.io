@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Makanan & Minuman</title>
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    /* Tambahan CSS */
+    .remove-button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .remove-button:hover {
+      background-color: darkred;
+    }
+
+    .order-now button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .order-now button:hover {
+      background-color: darkgreen;
+    }
+
+    .cart ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cart ul li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .promo {
+      background-color: #fffae6;
+      padding: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .promo h2 {
+      margin: 0 0 10px;
+      color: #b8860b;
+    }
+
+    .promo .add-to-cart {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 15px 20px; /* Membuat tombol lebih besar */
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .promo .add-to-cart:hover {
+      background-color: darkorange;
+    }
+
+    .tambahkan {
+      padding: 10px 20px; /* Menambah padding untuk memperluas ukuran tombol */
+      font-size: 16px; /* Menyesuaikan ukuran font */
+      background-color: darkorange; /* Warna biru untuk latar belakang */
+      color: #ffffff; /* Warna teks putih */
+      border: none; /* Menghapus border */
+      border-radius: 5px; /* Membuat sudut membulat */
+      width: 200px; /* Lebar tombol */
+      cursor: pointer; /* Menambahkan pointer untuk interaksi */
+    }
+
+    .menu-title {
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .total-price {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <h1 class="title">Menu Makanan & Minuman</h1>
+      <p class="subtitle">Lezat dan menyegarkan!</p>
+    </div>
+
+    <!-- Spesial Promo Section -->
+    <div class="promo">
+      <h2>Harga spesial follower bakaransae</h2>
+      <p>Nasi + Ayam Bakar Dada Surakarta</p>
+      <p><strong>Rp 20.000</strong> <span style="text-decoration: line-through;">Rp 22.500</span></p>
+      <button class="tambahkan" onclick="addToCart('Paket Promo Hemat', 20000)">Tambahkan ke keranjang</button>
+    </div>
+
+    <div>
+      <h1 class="menu-title">Daftar Makanan</h1>
+    </div>
+    <!-- Menu Section -->
+    <div class="menu-list">
+      <div class="menu-item">
+        <img src="img/dada.jpg" alt="Ayam Bakar Dada" class="menu-img">
+        <div class="menu-details">
+          <h2>Ayam Bakar Dada</h2>
+          <p>Rp 18.500</p>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Ayam Bakar Dada', 18500)">+</button>
+      </div>
+
+      <div class="menu-list">
+        <div class="menu-item">
+          <img src="img/paha.jpg" alt="Ayam Bakar Paha" class="menu-img">
+          <div class="menu-details">
+            <h2>Ayam Bakar Paha</h2>
+            <p>Rp 15.000</p>
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Ayam Bakar Paha', 15000)">+</button>
+      </div>
+      
+      <div class="menu-list">
+          <div class="menu-item">
+            <img src="img/sayap.jpg" alt="Ayam Bakar Sayap" class="menu-img">
+            <div class="menu-details">
+              <h2>Ayam Bakar Sayap</h2>
+              <p>Rp 8.000</p>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Ayam Bakar Sayap', 8000)">+</button>
+      </div>
+
+      <div>
+        <h1 class="menu-title">Daftar Minuman</h1>
+      </div>
+
+      <div class="menu-item">
+        <img src="img/teh.jpg" alt="Es Teh Manis" class="menu-img">
+        <div class="menu-details">
+          <h2>Es Teh Manis</h2>
+          <p>Rp 2.500</p>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Es Teh Manis', 2500)">+</button>
+      </div>
+
+      <div class="menu-item">
+        <img src="img/jeruk.jpeg" alt="Es Jeruk" class="menu-img">
+        <div class="menu-details">
+          <h2>Es Jeruk</h2>
+          <p>Rp 3.000</p>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Es Jeruk', 3000)">+</button>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="menu-title">Tambahan</h1>
+    </div>
+
+    <div class="menu-item">
+      <img src="img/nasi.jpeg" alt="Nasi" class="menu-img">
+      <div class="menu-details">
+        <h2>Nasi</h2>
+        <p>Rp 3.000</p>
+      </div>
+      <button class="add-to-cart" onclick="addToCart('Nasi', 3000)">+</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="img/usus.jpg" alt="Usus Bakar" class="menu-img">
+      <div class="menu-details">
+        <h2>Usus Bakar</h2>
+        <p>Rp 3.000</p>
+      </div>
+      <button class="add-to-cart" onclick="addToCart('Usus Bakar', 3000)">+</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="img/kepala.jpeg" alt="Kepala Bakar" class="menu-img">
+      <div class="menu-details">
+        <h2>Kepala Bakar</h2>
+        <p>Rp 3.000</p>
+      </div>
+      <button class="add-to-cart" onclick="addToCart('Kepala Bakar', 3000)">+</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="img/ceker.jpg" alt="Ceker Bakar" class="menu-img">
+      <div class="menu-details">
+        <h2>Ceker Bakar</h2>
+        <p>Rp 2.000</p>
+      </div>
+      <button class="add-to-cart" onclick="addToCart('Ceker Bakar', 2000)">+</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="img/tahu.jpg" alt="Tahu" class="menu-img">
+      <div class="menu-details">
+        <h2>Tahu</h2>
+        <p>Rp 1.000</p>
+      </div>
+      <button class="add-to-cart" onclick="addToCart('Tahu', 1000)">+</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="img/tempe.jpeg" alt="Tempe" class="menu-img">
+      <div class="menu-details">
+        <h2>Tempe</h2>
+        <p>Rp 1.000</p>
+      </div>
+      <button class="add-to-cart" onclick="addToCart('Tempe', 1000)">+</button>
+    </div>
+  </div>
+
+    <!-- Cart Section -->
+    <div class="cart">
+      <h2>Keranjang</h2>
+      <ul id="cart-list">
+        <!-- Items will be dynamically added here -->
+      </ul>
+      <div class="total-price">
+        Total: <span id="total-price">Rp 0</span>
+      </div>
+    </div>
+
+    <!-- Order Now Section -->
+    <div class="order-now">
+      <button id="order-button" onclick="placeOrder()">Pesan Sekarang</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <p>&copy; 2025 Bakaran Sae</p>
+    </div>
+  </div>
+
+  <script>
+    const cart = {};
+    let totalPrice = 0;
+
+    function addToCart(item, price) {
+      if (cart[item]) {
+        cart[item].count++;
+      } else {
+        cart[item] = { count: 1, price: price };
+      }
+      totalPrice += price;
+      updateCartDisplay();
+    }
+
+    function removeFromCart(item) {
+      if (cart[item]) {
+        totalPrice -= cart[item].price;
+        cart[item].count--;
+        if (cart[item].count === 0) {
+          delete cart[item];
+        }
+      }
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartList = document.getElementById("cart-list");
+      const totalPriceDisplay = document.getElementById("total-price");
+      cartList.innerHTML = "";
+
+      for (const [item, { count, price }] of Object.entries(cart)) {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item} x ${count}`;
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Hapus";
+        removeButton.className = "remove-button";
+        removeButton.onclick = () => removeFromCart(item);
+
+        listItem.appendChild(removeButton);
+        cartList.appendChild(listItem);
+      }
+
+      totalPriceDisplay.textContent = `Rp ${totalPrice.toLocaleString()}`;
+    }
+
+    function placeOrder() {
+      if (Object.keys(cart).length === 0) {
+        alert("Keranjang kosong! Tambahkan item terlebih dahulu.");
+        return;
+      }
+
+      let orderSummary = "Halo saya mau pesan:\n";
+      for (const [item, { count }] of Object.entries(cart)) {
+        orderSummary += `- ${item} x ${count}\n`;
+      }
+
+      const encodedOrder = encodeURIComponent(orderSummary);
+      const whatsappLink = `https://wa.me/+6285189327417/?text=${encodedOrder}`;
+      window.open(whatsappLink, "_blank");
+    }
+  </script>
+</body>
+</html>

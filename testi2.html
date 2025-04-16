@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Service - Testimonial Slider</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Testimonial Slider Section */
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .testimonial-card {
+      flex: 0 0 100%;
+      padding: 20px;
+      text-align: center;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+
+    .testimonial-card h3 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    /* Star Rating Section */
+    .star-rating {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .star {
+      font-size: 2rem;
+      color: #d3d3d3;
+      transition: color 0.3s ease;
+    }
+
+    .star:hover,
+    .star.selected {
+      color: #f5b300;
+    }
+
+    /* Navigation Arrows */
+    .nav-arrows {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .nav-arrows span {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .nav-arrows span:hover {
+      background-color: #45a049;
+    }
+
+    /* Add Testimonial Form */
+    .add-testimonial {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .add-testimonial h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .add-testimonial form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .add-testimonial input[type="text"], .add-testimonial textarea {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .add-testimonial textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .add-testimonial button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .add-testimonial button:hover {
+      background-color: #45a049;
+    }
+
+    /* Footer Section */
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <h1 class="title">Customer Service</h1>
+      <p class="subtitle">Kami siap membantu Anda!</p>
+    </div>
+
+    <!-- Testimonial Slider Section -->
+    <div class="testimonial-slider">
+      <div class="testimonial-container">
+        <div class="testimonial-card">
+          <h3>John Doe</h3>
+          <p>"Layanan pelanggan sangat membantu dan responsif. Prosesnya cepat dan memuaskan!"</p>
+          <div class="stars">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9734;</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <h3>Jane Smith</h3>
+          <p>"Saya sangat puas dengan bantuan yang diberikan, sangat informatif dan ramah!"</p>
+          <div class="stars">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <h3>Emily Taylor</h3>
+          <p>"Pelayanan yang cepat dan solusi yang tepat. Saya pasti akan kembali menggunakan layanan ini!"</p>
+          <div class="stars">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9734;</span>
+            <span>&#9734;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="nav-arrows">
+        <span id="prev">&#10094;</span>
+        <span id="next">&#10095;</span>
+      </div>
+    </div>
+
+    <!-- Add Testimonial Form -->
+    <div class="add-testimonial">
+      <h2>Berikan Testimoni Anda</h2>
+      <form action="submit_testimonial.php" method="POST">
+        <input type="text" name="name" placeholder="Nama Anda" required>
+        <textarea name="testimonial" placeholder="Tulis Testimoni Anda" required></textarea>
+        <div class="stars">
+          <label for="rating">Peringkat:</label>
+          <div class="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+        </div>
+        <button type="submit">Kirim Testimoni</button>
+      </form>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <p>&copy; 2025 Bakaran Sae</p>
+    </div>
+  </div>
+
+  <script>
+    const testimonialContainer = document.querySelector('.testimonial-container');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let index = 0;
+    const totalTestimonials = document.querySelectorAll('.testimonial-card').length;
+
+    function showTestimonial() {
+      const offset = -index * 100;
+      testimonialContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index === 0) ? totalTestimonials - 1 : index - 1;
+      showTestimonial();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index === totalTestimonials - 1) ? 0 : index + 1;
+      showTestimonial();
+    });
+
+    // Initialize first testimonial
+    showTestimonial();
+
+    // Star rating logic
+    const stars = document.querySelectorAll('.star');
+    stars.forEach(star => {
+      star.addEventListener('mouseover', () => {
+        const value = star.getAttribute('data-value');
+        highlightStars(value);
+      });
+
+      star.addEventListener('mouseout', () => {
+        const selectedValue = document.querySelector('.star.selected')?.getAttribute('data-value');
+        highlightStars(selectedValue || 0);
+      });
+
+      star.addEventListener('click', () => {
+        const value = star.getAttribute('data-value');
+        document.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
+        star.classList.add('selected');
+        highlightStars(value);
+      });
+    });
+
+    function highlightStars(value) {
+      stars.forEach(star => {
+        star.style.color = star.getAttribute('data-value') <= value ? '#f5b300' : '#d3d3d3';
+      });
+    }
+  </script>
+</body>
+</html>
